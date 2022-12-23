@@ -1,1 +1,25 @@
+foot_dict = {
+    'Россия': 'A',
+    'Португалия': 'B', 
+    'Франция': 'C',
+    'Дания': 'C',
+    'Египет': 'A'
+}
 
+foot_dict['Турция'] = 'B'
+target_group = input('введите группу: ')
+outpoot = ' '
+
+for i in foot_dict:
+    if foot_dict[i] == target_group:
+        outpoot += 1 + '\n'
+print(outpoot)
+
+count_by_groups = {}
+for i in foot_dict.items():
+    try:
+        count_by_groups[i[1]] += 1
+    except:
+        count_by_groups[i[1]] = 1
+    for i in count_by_groups:
+        print("В группе %s: " % i, count_by_groups[i])
